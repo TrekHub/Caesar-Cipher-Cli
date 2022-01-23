@@ -5,10 +5,14 @@ import static org.junit.Assert.*;
 public class EncodingCipherTest {
 
     @Test
-    public void checkCipherKeyIsAboveOrEqualOne() {
+    public  void checkCipherText(){
         EncodingCipher encode = new EncodingCipher();
-        assertTrue(encode.checkCipherKey(1) >= 1 &&  encode.checkCipherKey(1) <= 25);
+        assertEquals("vgf", encode.encode("ted", 2));
     }
+
+
+
+
 
 
 }

@@ -1,47 +1,35 @@
 public class EncodingCipher {
 
-    String normalCipher;
-    int cipherKey;
-
-
-
-    //Checking if the cipher key is between 0 and 26
-    public int checkCipherKey(int cipherKey) {
-
-        if (cipherKey >= 25) {
-            this.cipherKey = (cipherKey % 25);
-        } else if (cipherKey <= 1) {
-            this.cipherKey = (cipherKey % 25) + 25;
-        }
-
-        return cipherKey;
-    }
 
 
 
 
-    public String encode(String normalCipher, int cipherKey) {
+
+    public String encode(String inputString, int cipherKey) {
 
         String encodedCipher = "";
         //Converting the string to an array of characters
-        for (int i = 0; i < normalCipher.length(); i++) {
-            char ch = normalCipher.charAt(i);
+        for (int i = 0; i < inputString.length(); i++) {
+            char singleChar = inputString.charAt(i);
+              //Check if the Character is a symbol or a letter
+            if (Character.isLetter(singleChar)) {
 
-            if (Character.isLetter(ch)) {
-
-
-                if (Character.isLowerCase(ch)) {
-                    char c = (char) (ch + cipherKey);
+                // LowerCase
+                if (Character.isLowerCase(singleChar)) {
+                    char c = (char) (singleChar + cipherKey);
                     if (c > 'z') {
-                        encodedCipher += (char) (ch - (26 - cipherKey));
+                        encodedCipher += (char) (singleChar - (26 - cipherKey));
                     } else {
                         encodedCipher += c;
                     }
 
-                } else if (Character.isUpperCase(ch)) {
-                    char c = (char) (ch + cipherKey);
+
+
+                    //UpperCase
+                } else if (Character.isUpperCase(singleChar)) {
+                    char c = (char) (singleChar + cipherKey);
                     if (c > 'Z') {
-                        encodedCipher += (char) (ch - (26 - cipherKey));
+                        encodedCipher += (char) (singleChar - (26 - cipherKey));
                     } else {
                         encodedCipher += c;
                     }
@@ -49,7 +37,7 @@ public class EncodingCipher {
                 }
 
             } else {
-                encodedCipher += ch;
+                encodedCipher += singleChar;
             }
         }
 
@@ -58,4 +46,6 @@ public class EncodingCipher {
 
 
     }
+
+
 }
