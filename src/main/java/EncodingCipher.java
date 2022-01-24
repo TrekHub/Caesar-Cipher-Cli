@@ -12,13 +12,13 @@ public class EncodingCipher {
 
                 // LowerCase
                 if (Character.isLowerCase(singleChar)) {
-                    char c = (char) (singleChar + cipherKey);
-                    encodedCipher += c;
+                    char character = (char) (singleChar + cipherKey);
+                    encodedCipher += character;
 
                     //UpperCase
                 } else if (Character.isUpperCase(singleChar)) {
-                    char c = (char) (singleChar + cipherKey);
-                    encodedCipher += c;
+                    char character = (char) (singleChar + cipherKey);
+                    encodedCipher += character;
 
                 }
 

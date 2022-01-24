@@ -1,9 +1,10 @@
 public class Cipher {
 
-    String inputString;
-    int cipherKey;
+    private String inputString;
+    private int cipherKey;
 
     public String getInputString() {
+
         return inputString;
     }
 

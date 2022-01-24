@@ -11,16 +11,16 @@ public class DecodingCipher {
 
                 // LowerCase
                 if (Character.isLowerCase(singleChar)) {
-                    char c = (char) (singleChar - cipherKey);
+                    char character = (char) (singleChar - cipherKey);
 
-                    decodedCipher += c;
+                    decodedCipher += character;
 
 
                     //UpperCase
                 } else if (Character.isUpperCase(singleChar)) {
-                    char c = (char) (singleChar - cipherKey);
+                    char character = (char) (singleChar - cipherKey);
 
-                    decodedCipher += c;
+                    decodedCipher += character;
                 }
 
 
