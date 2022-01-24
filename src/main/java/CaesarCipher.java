@@ -26,7 +26,12 @@ public class CaesarCipher {
 
 
         //Checking if the User Inputs the correct data
-        if (inputString != " ") {
+        if (inputString == "") {
+
+            System.out.println("Enter the Correct details");
+
+        } else {
+
             if (cipherKey > 0 && cipherKey < 26) {
 
                 String encodedCipher = encode.encode(inputString, cipherKey);
@@ -42,9 +47,6 @@ public class CaesarCipher {
             } else {
                 System.out.println("Enter the Correct details");
             }
-
-        } else {
-            System.out.println("Enter the Correct details");
 
         }
 
